@@ -1,0 +1,18 @@
+version: '2'
+services:
+  jupyter-notebook:
+    build: ./
+    image: gs/jn
+    ports:
+      - "8888"
+    links:
+      - psql
+    depends_on:
+      - psql
+  wmtsdb:
+    environment:
+      POSTGRES_PASSWORD: abc123
+      POSTGRES_USER: jupyter
+      POSTGRES_DB: jupyter
+    image: postgres:latest
+

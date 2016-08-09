@@ -37,3 +37,15 @@ $ heroku config:set JUPYTER_NOTEBOOK_PASSWORD=<your_passwd> -a <your_app>
 - Clone this repository
 - Create a postgres database with name `jupyter-db`
 - Deploy using `cf push`
+
+### Docker
+
+## Image/Container
+- Clone this repository
+- Build the image locally: `$ docker build --tag=sometag .`
+- Run the container: `$ docker run -d -P sometag`
+
+## Docker Compose
+This creates a PostgreSQL container to use for development
+- `$ docker-compose up`
+

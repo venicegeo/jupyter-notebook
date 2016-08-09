@@ -7,6 +7,7 @@ LABEL io.k8s.description="Jupyter Notebook geointservices container" \
       io.openshift.tags="python,jupyter"
 USER 1001
 ENV LD_LIBRARY_PATH /opt/rh/python33/root/usr/lib64
-RUN  /opt/rh/python33/root/usr/bin/pip3.3 install jupyter --user
+RUN  /opt/rh/python33/root/usr/bin/pip3.3 install jupyter --user && \
+     /opt/rh/python33/root/usr/bin/pip3.3 install --upgrade jinja2 --user
 CMD /opt/app-root/src/.local/bin/jupyter notebook --no-browser --ip=0.0.0.0
 

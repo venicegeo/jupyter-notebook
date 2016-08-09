@@ -9,7 +9,7 @@ services:
       - psql
     depends_on:
       - psql
-  wmtsdb:
+  psql:
     environment:
       POSTGRES_PASSWORD: abc123
       POSTGRES_USER: jupyter

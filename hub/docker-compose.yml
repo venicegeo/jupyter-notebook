@@ -1,0 +1,18 @@
+version: '2'
+services:
+  jupyter-hub:
+    build: ./
+    image: gs/nodepy
+    ports:
+      - "8080"
+    links:
+      - psql
+    depends_on:
+      - psql
+  psql:
+    environment:
+      POSTGRES_PASSWORD: abc123
+      POSTGRES_USER: jupyter
+      POSTGRES_DB: jupyter
+    image: postgres:latest
+
